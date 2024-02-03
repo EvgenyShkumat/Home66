@@ -7,17 +7,16 @@ void random_matrix_init(int matrix[N][M], int min, int max);
 string convert_matrix_to_string(int matrix[N][M]);
 
 string find_even_column(int matrix[N][M]);
+int find_column_sum(int matrix[N][M], int column_index);
 
 int main() {
 	int matrix[N][M];
 
 	random_matrix_init(matrix, 0, 9);
 
-	string msg = find_even_column(matrix) == "" ? "There is no column that have only even numbers"
-		: "Columns that have only even elements:\n" + find_even_column(matrix);
-
+	
 	cout << "Matrix:\n" << convert_matrix_to_string(matrix);
-	cout << msg;
+	cout << "1st column sum " << find_column_sum(matrix, 0);
 
 	return 0;
 }

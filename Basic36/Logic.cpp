@@ -25,3 +25,15 @@ string find_even_column(int matrix[N][M]) {
 
 	return msg;
 }
+
+int find_column_sum(int matrix[N][M], int column_index) {
+	int sum = 0;
+
+	for (int i = 0; i < N; i++)
+	{
+		sum += matrix[i][column_index];
+	}
+
+	return sum;
+}
+
