@@ -37,3 +37,22 @@ int find_column_sum(int matrix[N][M], int column_index) {
 	return sum;
 }
 
+string find_digaonal_column_sum(int matrix[N][M]) {
+	string msg = "";
+
+	for (int i = 0; i < N; i++)
+	{
+		int sum = 0;
+
+		if (matrix[i][i] < 0) {
+			sum += find_column_sum(matrix, i);
+			msg += "Column: " + to_string(i + 1) + " Sum: " + to_string(sum) + "\n";
+		}
+	}
+
+	if (msg == "") {
+		msg = "There is no such columns";
+	}
+
+	return msg;
+}
