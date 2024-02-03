@@ -56,3 +56,16 @@ string find_digaonal_column_sum(int matrix[N][M]) {
 
 	return msg;
 }
+
+int find_column_abs_sum(int matrix[N][M], int column_index) {
+	int sum = 0;
+
+	for (int i = 0; i < N; i++)
+	{
+		sum += abs(matrix[i][column_index]);
+	}
+
+	return sum;
+}
+
+
