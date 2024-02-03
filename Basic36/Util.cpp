@@ -35,3 +35,30 @@ string convert_matrix_to_string(int matrix[N][M]) {
 
 	return msg;
 }
+
+int max_abs_sum_row(int matrix[N][M]) {
+	int max_sum = 0;
+	int row_index = -2;
+
+	for (int i = 0; i < N; i++)
+	{
+		bool flag = true;
+		int sum = 0;
+
+		for (int j = 0; j < M; j++)
+		{
+			if (matrix[i][j] % 2 == 0) {
+				sum = 0;
+				break;
+			}
+			sum += abs(matrix[i][j]);
+		}
+
+		if (sum > max_sum) {
+			max_sum = sum;
+			row_index = i;
+		}
+	}
+
+	return row_index;
+}
